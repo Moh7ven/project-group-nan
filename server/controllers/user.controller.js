@@ -51,12 +51,19 @@ export const createUser = async (req, res) => {
 export const signIn = async (req, res) => {
   try {
     const { email, password } = req.body;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!email || !password) {
       return res.status(400).json({
         message: "Veuillez renseigner tous les champs",
         status: false,
       });
+    }
+
+    if (!emailRegex.test(email)) {
+      return res
+        .status(400)
+        .json({ message: "Veuillez entrer un email valide", status: false });
     }
     const user = await Users.findOne({ email });
     if (!user) {
