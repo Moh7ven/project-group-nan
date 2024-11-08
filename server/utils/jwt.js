@@ -7,7 +7,6 @@ export const generateToken = async (data) => {
     const token = await jwt.sign(data, process.env.JWT_SECRET, {
       expiresIn: "6h",
     });
-    console.log(token);
     return token;
   } catch (error) {
     console.log(error);
@@ -18,6 +17,7 @@ export const generateToken = async (data) => {
 export const verifyToken = async (token) => {
   try {
     const verify = await jwt.verify(token, process.env.JWT_SECRET);
+
     if (verify) return verify;
     else return false;
   } catch (error) {
