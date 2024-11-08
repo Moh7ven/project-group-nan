@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignIn from "./pages/signIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
 
 function App() {
   const router = createBrowserRouter([
@@ -11,6 +12,11 @@ function App() {
       path: "/",
       element: <SignIn />,
     },
+    {
+      path: "/connexion",
+      element: <SignUp />
+    },
+   
   ]);
   return (
     <>
