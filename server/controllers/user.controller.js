@@ -3,7 +3,6 @@ import Users from "../models/Users.js";
 export const getUserConnected = async (req, res) => {
   try {
     const userId = res.locals.userId;
-    console.log(userId);
 
     if (!userId) {
       return res
