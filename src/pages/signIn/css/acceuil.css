@@ -5,6 +5,8 @@
 }
 .container_Acceuil {
   width: 100%;
+  background: rgb(194, 191, 191);
+  padding-bottom: 2rem;
 }
 .section_Aceeuil {
   width: 100%;
@@ -43,7 +45,7 @@
 .box_debut_quiz {
   width: 95%;
   height: 100px;
-  background: wheat;
+  background: white;
   border-radius: 15px;
   display: flex;
   justify-content: center;
